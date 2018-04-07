@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using NeckTwistUi.Models;
 
 namespace NeckTwistUi.Controllers
@@ -21,7 +22,7 @@ namespace NeckTwistUi.Controllers
 
             return View();
         }
-
+        [Authorize]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
